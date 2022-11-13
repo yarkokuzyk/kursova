@@ -4,6 +4,7 @@ import static com.example.audioplayer.AlbumDetailsAdapter.albumFiles;
 import static com.example.audioplayer.MainActivity.musicFiles;
 import static com.example.audioplayer.MainActivity.repeatBoolean;
 import static com.example.audioplayer.MainActivity.shuffleBoolean;
+import static com.example.audioplayer.MusicAdapter.mFiles;
 
 import android.content.ComponentName;
 import android.content.Context;
@@ -401,7 +402,7 @@ public class PlayerActivity extends AppCompatActivity implements ActionPlaying, 
 
             listSongs = albumFiles;
         } else {
-            listSongs = musicFiles;
+            listSongs = mFiles;
         }
 
         if (listSongs != null) {
