@@ -16,7 +16,7 @@ public class ApplicationClass extends Application {
     public void onCreate() {
         super.onCreate();
         createNotificationChannel();
-        
+
     }
 
     private void createNotificationChannel() {

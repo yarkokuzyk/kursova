@@ -78,15 +78,15 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
         if (requestCode == REQUEST_CODE)
         {
 
-                if (grantResults[0] == PackageManager.PERMISSION_GRANTED)
-                {
-                    Toast.makeText(this, "Permission Granted !", Toast.LENGTH_SHORT).show();
-                    musicFiles = getAllAudio(this);
-                }
-                else
-                {
-                        ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, REQUEST_CODE);
-                }
+            if (grantResults[0] == PackageManager.PERMISSION_GRANTED)
+            {
+                Toast.makeText(this, "Permission Granted !", Toast.LENGTH_SHORT).show();
+                musicFiles = getAllAudio(this);
+            }
+            else
+            {
+                ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, REQUEST_CODE);
+            }
 
         }
 

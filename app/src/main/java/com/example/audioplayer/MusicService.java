@@ -49,7 +49,6 @@ public class MusicService extends Service implements MediaPlayer.OnCompletionLis
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {
-        Log.e("Bind", "Method");
         return mBinder;
     }
 
@@ -63,6 +62,7 @@ public class MusicService extends Service implements MediaPlayer.OnCompletionLis
     public int onStartCommand(Intent intent, int flags, int startId) {
         int myPosition = intent.getIntExtra("servicePosition", -1);
         String actionName = intent.getStringExtra("ActionName");
+        Log.e(getClass().getName(), String.format("pos = %d", myPosition));
         if (myPosition != -1) {
             playMedia(myPosition);
         }
@@ -187,7 +187,7 @@ public class MusicService extends Service implements MediaPlayer.OnCompletionLis
                 .setOnlyAlertOnce(true)
                 .setVisibility(NotificationCompat.VISIBILITY_PUBLIC)
                 .build();
-       startForeground(2, notification);
+        startForeground(2, notification);
     }
 
     private byte[] getAlbumArt(String uri) {
