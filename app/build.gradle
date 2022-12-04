@@ -22,7 +22,7 @@ android {
     buildTypes {
 
         debug {
-
+            minifyEnabled false
             firebaseAppDistribution {
                 releaseNotesFile="/path/to/releasenotes.txt"
                 groups = "QA"
